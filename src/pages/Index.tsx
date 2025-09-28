@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
+import VisionMetricsSection from "@/components/VisionMetricsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import AboutSection from "@/components/AboutSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -18,8 +19,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <FeaturesSection />
-      <AboutSection />
+      <VisionMetricsSection />
       <CommunitySection />
       <Footer />
     </div>

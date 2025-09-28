@@ -92,23 +92,23 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-background">
+    <section className="bg-background">
       {/* Header */}
-      <header className="flex flex-row items-center justify-between gap-4 p-4 sm:p-6 max-w-7xl mx-auto">
+      <header className="flex flex-row items-center justify-between gap-4 p-4 sm:p-6 max-w-7xl mx-auto animate-fade-in">
         <div className="flex items-center gap-3">
           <div>
-            <span className="font-bold text-lg sm:text-xl">GREiPR</span>
+            <span className="font-bold text-lg sm:text-xl hover:scale-105 transition-transform duration-300">GREiPR</span>
             <span className="text-muted-foreground text-xs sm:text-sm ml-2 hidden sm:inline">ESN-Powered Hiring</span>
           </div>
         </div>
         
         {/* User Type Toggle */}
         <div className="flex items-center gap-2">
-          <div className="inline-flex bg-foreground text-background rounded-full p-1">
+          <div className="inline-flex bg-foreground text-background rounded-full p-1 hover:scale-105 transition-transform duration-300">
             <button
               type="button"
               onClick={() => setUserType("job_seeker")}
-              className={`px-2 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+              className={`px-2 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 ${
                 userType === "job_seeker" 
                   ? "bg-background text-foreground shadow-md" 
                   : "text-background/80 hover:text-background"
@@ -120,7 +120,7 @@ const HeroSection = () => {
             <button
               type="button"
               onClick={() => setUserType("employer")}
-              className={`px-2 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+              className={`px-2 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 ${
                 userType === "employer" 
                   ? "bg-background text-foreground shadow-md" 
                   : "text-background/80 hover:text-background"
@@ -138,9 +138,9 @@ const HeroSection = () => {
           {userType === "job_seeker" ? (
             <>
               {/* Left Content - Job Seekers */}
-              <div className="space-y-8">
+              <div className="space-y-8 animate-fade-in">
                 {/* Category Badge */}
-                <div className="inline-flex items-center gap-2 bg-muted rounded-full px-4 py-2 text-sm text-muted-foreground">
+                <div className="inline-flex items-center gap-2 bg-muted rounded-full px-4 py-2 text-sm text-muted-foreground hover:scale-105 transition-all duration-300 hover:bg-muted/80">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
@@ -182,7 +182,7 @@ const HeroSection = () => {
                     <Button 
                       type="submit" 
                       disabled={!name || !email || isSubmitting}
-                      className="bg-foreground text-background hover:bg-foreground/90 px-4 sm:px-6 whitespace-nowrap"
+                      className="bg-foreground text-background hover:bg-foreground/90 px-4 sm:px-6 whitespace-nowrap hover:scale-105 transition-all duration-300"
                     >
                       <span className="hidden sm:inline">{isSubmitting ? "Submitting..." : "Join the DEEPLOI Waitlist →"}</span>
                       <span className="sm:hidden">{isSubmitting ? "Submitting..." : "Join Waitlist"}</span>
@@ -191,32 +191,32 @@ const HeroSection = () => {
                   <Button 
                     variant="outline" 
                     onClick={handleLearnMore}
-                    className="px-4 sm:px-6 w-full sm:w-auto"
+                    className="px-4 sm:px-6 w-full sm:w-auto hover:scale-105 transition-all duration-300"
                   >
                     Learn more
                   </Button>
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8">
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8 animate-fade-in">
+                  <div className="flex items-center gap-2 text-sm hover:scale-105 transition-all duration-300">
+                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center pulse">
                       <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span className="text-muted-foreground">Verified Employers</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                  <div className="flex items-center gap-2 text-sm hover:scale-105 transition-all duration-300">
+                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center pulse">
                       <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span className="text-muted-foreground">ESN Digital Identity</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                  <div className="flex items-center gap-2 text-sm hover:scale-105 transition-all duration-300">
+                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center pulse">
                       <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
@@ -227,8 +227,8 @@ const HeroSection = () => {
               </div>
 
               {/* Right Content - ESN Verification Card */}
-              <div className="lg:ml-8">
-                <Card className="p-6 space-y-6 bg-card border shadow-lg">
+              <div className="lg:ml-8 animate-fade-in">
+                <Card className="p-6 space-y-6 bg-card border shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <p className="text-sm text-muted-foreground">Identity</p>
@@ -263,7 +263,7 @@ const HeroSection = () => {
           ) : (
             <>
               {/* Left Content - Employers */}
-              <div className="space-y-8">
+              <div className="space-y-8 animate-fade-in">
                 {/* Main Headline */}
                 <div>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
@@ -298,7 +298,7 @@ const HeroSection = () => {
                     <Button 
                       type="submit" 
                       disabled={!name || !email || isSubmitting}
-                      className="bg-foreground text-background hover:bg-foreground/90 px-4 sm:px-6 whitespace-nowrap"
+                      className="bg-foreground text-background hover:bg-foreground/90 px-4 sm:px-6 whitespace-nowrap hover:scale-105 transition-all duration-300"
                     >
                       <span className="hidden sm:inline">{isSubmitting ? "Submitting..." : "Join the STRAIVR Waitlist →"}</span>
                       <span className="sm:hidden">{isSubmitting ? "Submitting..." : "Join Waitlist"}</span>
@@ -307,7 +307,7 @@ const HeroSection = () => {
                   <Button 
                     variant="outline" 
                     onClick={handleLearnMore}
-                    className="px-4 sm:px-6 w-full sm:w-auto"
+                    className="px-4 sm:px-6 w-full sm:w-auto hover:scale-105 transition-all duration-300"
                   >
                     Learn more
                   </Button>
@@ -343,8 +343,8 @@ const HeroSection = () => {
               </div>
 
               {/* Right Content - Employer Verification Card */}
-              <div className="lg:ml-8">
-                <Card className="p-6 space-y-6 bg-card border shadow-lg">
+              <div className="lg:ml-8 animate-fade-in">
+                <Card className="p-6 space-y-6 bg-card border shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <p className="text-sm text-muted-foreground">Identity</p>

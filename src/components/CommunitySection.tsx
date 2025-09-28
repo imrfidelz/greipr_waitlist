@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Briefcase, Calendar, MessageCircle, GraduationCap } from "lucide-react";
-import cuisineImage from "@/assets/cuisine-presentation.jpg";
+import designTeamImage from "@/assets/design-team.png";
 
 const resources = [
   {
@@ -34,8 +34,8 @@ const CommunitySection = () => {
           <div className="animate-fade-in order-2 lg:order-1">
             <div className="relative">
               <img 
-                src={cuisineImage} 
-                alt="Professional networking and career development" 
+                src={designTeamImage} 
+                alt="Design team collaborating on digital projects" 
                 className="w-full rounded-2xl shadow-warm"
               />
               <div className="absolute inset-0 bg-gradient-warm opacity-10 rounded-2xl"></div>
